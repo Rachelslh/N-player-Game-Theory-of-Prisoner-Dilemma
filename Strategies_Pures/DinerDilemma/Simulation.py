@@ -93,11 +93,11 @@ app.layout = html.Div(
     children=[
         html.H1(children='Dilemme du Dîner'),
         'Le dilemme sans scrupule du dîner est un dilemme à n-player.'
-        ' La situation imaginée est que plusieurs personnes vont manger et, avant de commander, '
+        ' La situation imaginée est que plusieurs personnes vont manger dans un restaurant et avant de commander, '
         'elles acceptent de partager les coûts à parts égales. Chaque convive doit maintenant choisir de '
         'commander le plat coûteux ou bon marché. Il est présupposé que le plat le plus coûteux est meilleur que '
         'le moins cher, mais pas assez pour justifier de payer la différence lorsque vous mangez seul. '
-        'Chaque convive justifie le fait que, en commandant le plat plus onéreux, le coût supplémentaire de '
+        'Chaque convive justifie le fait que, en commandant le plat le plus onéreux, le coût supplémentaire de '
         'leur note sera minime et que, par conséquent, le meilleur dîner en vaut la peine.',
         html.H2(children='Matrice de Gain'),
         html.Label('Choisissez le nombre de joueurs'),
@@ -153,8 +153,7 @@ def generate_table(N):
         impair = int(gs.N / 2) + 1
 
     return html.Table(
-        [html.Thead(generate_colspans(pair, impair, c, c, [])),
-         html.Tbody(generate_rowspans(1, l, g, 2, []))]
+        [html.Thead(generate_colspans(pair, impair, c, c, [])), html.Tbody(generate_rowspans(1, l, g, 2, []))]
     )
 
 
